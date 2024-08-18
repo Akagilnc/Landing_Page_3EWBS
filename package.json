@@ -1,33 +1,25 @@
 {
-  "name": "landingpage3e",
-  "version": "1.0.0",
+  "name": "@3e-wbc/ows",
+  "version": "2.0.0",
   "description": "",
-  "main": "source/index.js",
   "directories": {
     "lib": "source/",
     "test": "."
   },
   "dependencies": {
-    "npm": "^6.14.3"
+    "boot-cell": "^2.0.0-beta.29",
+    "dom-renderer": "^2.3.0",
+    "web-utility": "^4.4.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
-    "amd-bundle": "^1.7.8",
-    "babel-plugin-inline-import": "^3.0.0",
-    "husky": "^2.7.0",
-    "web-cell-cli": "^1.0.0"
+    "parcel": "~2.12.0"
   },
+  "browserslist": "> 0.5%, last 2 versions, not dead, IE 11",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "web-cell pack",
-    "dev": "web-cell preview"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run build"
-    }
+    "clean": "rm -rf .parcel-cache/ dist/",
+    "build": "npm run clean  &&  parcel build source/index.html --public-url .",
+    "dev": "npm run clean  &&  parcel source/index.html"
   },
   "repository": {
     "type": "git",
@@ -42,21 +34,5 @@
   "bugs": {
     "url": "https://github.com/Akagilnc/Landing_Page_3EWBS/issues"
   },
-  "homepage": "https://github.com/Akagilnc/Landing_Page_3EWBS#readme",
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ],
-    "plugins": [
-      [
-        "babel-plugin-inline-import",
-        {
-          "extensions": [
-            ".css",
-            ".json"
-          ]
-        }
-      ]
-    ]
-  }
+  "homepage": "https://github.com/Akagilnc/Landing_Page_3EWBS#readme"
 }

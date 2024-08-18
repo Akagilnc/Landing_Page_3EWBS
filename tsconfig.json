@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "jsx": "react-jsx",
+    "jsxImportSource": "dom-renderer"
+  },
+  "include": ["source/**/*"]
+}

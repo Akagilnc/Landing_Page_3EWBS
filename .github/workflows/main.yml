@@ -1,0 +1,32 @@
+name: CI & CD
+on:
+  push:
+    branches:
+      - master
+jobs:
+  Build-and-Publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          lfs: true
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 9
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: Install & Build
+        run: |
+          pnpm i --frozen-lockfile
+          pnpm build
+
+      - name: Update document
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./dist
+          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          force_orphan: true

@@ -1,0 +1,33 @@
+html,
+body,
+header,
+#intro {
+    height: 100%;
+}
+
+#intro {
+    background:url("./img/3E.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.top-nav-collapse {
+    background-color: #FF8800;
+}
+@media (max-width: 768px) {
+    .navbar:not(.top-nav-collapse) {
+        background-color: #FF8800;
+    }
+}
+@media (min-width: 800px) and (max-width: 850px) {
+    .navbar:not(.top-nav-collapse) {
+        background-color: #FF8800;
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
+#class_schedule .table td {
+    vertical-align: middle;
+}
